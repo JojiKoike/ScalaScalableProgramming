@@ -20,6 +20,15 @@ class binding {
       if file.getName.endsWith(".scala")
     } yield file
 
+  val forlineLengths: Array[Int] =
+    for {
+      file <- filesHere
+      if file.getName.endsWith(".scala")
+      line <- fileLines(file)
+      trimmed = line.trim
+      if trimmed.matches(".*for.*")
+    } yield trimmed.length
+
   private def fileLines(file: java.io.File): List[String] = {
     Source.fromFile(file).getLines().toList
   }
