@@ -14,6 +14,12 @@ class binding {
     } println(file + ": " + trimmed)
   }
 
+  def scalaFiles: Array[File] =
+    for {
+      file <- filesHere
+      if file.getName.endsWith(".scala")
+    } yield file
+
   private def fileLines(file: java.io.File): List[String] = {
     Source.fromFile(file).getLines().toList
   }
