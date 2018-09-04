@@ -92,3 +92,6 @@ fabric.properties
 *.class
 *.log
 
+# jenv local setting
+.java-version
+
