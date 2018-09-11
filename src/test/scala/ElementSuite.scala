@@ -3,6 +3,8 @@ import Element.elem
 class ElementSuite extends FunSuite {
   test("elem result should have passed width") {
     val ele = elem('x', 2, 3)
-    assert(ele.width == 2)
+    assertResult(2) {
+      ele.width
+    }
   }
 }
