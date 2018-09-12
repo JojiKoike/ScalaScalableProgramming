@@ -9,5 +9,8 @@ libraryDependencies ++= Seq(
   "com.github.finagle" %% "finch-circe" % "0.22.0",
   "io.circe" %% "circe-generic" % "0.9.0",
   "org.scalactic" %% "scalactic" % "3.0.5",
-  "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+  "org.scalatest" %% "scalatest" % "3.0.5" % "test",
+  "org.specs2" %% "specs2-core" % "4.3.4" % "test"
 )
+
+scalacOptions in Test ++= Seq("-Yrangepos")
