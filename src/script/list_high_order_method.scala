@@ -38,3 +38,11 @@ println(sum(List(1,2,3,4,5)))
 
 def product(xs: List[Int]): Int = (1 /: xs) (_ * _)
 println(product(List(1,2,3,4,5)))
+
+println((words.head /: words.tail) (_ + " " + _))
+
+def flattenLeft[T](xss: List[List[T]]): List[T] = (List[T]() /: xss) (_ ::: _)
+println(flattenLeft(List(List(1,2,3), List(4,5,6), List(7,8,9))))
+
+def flattenRight[T](xss: List[List[T]]): List[T] = (xss :\ List[T]()) (_ ::: _)
+println(flattenRight(List(List(1,2,3), List(4,5,6), List(7,8,9))))
