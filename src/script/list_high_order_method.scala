@@ -12,7 +12,6 @@ println(List.range(1, 5).flatMap(
   i => List.range(1, i).map(j => (i, j))
 ))
 
-
 // foreach
 (for (i <- List.range(1, 5); j <- List.range(1, i)) yield (i, j)).foreach(print)
 println
@@ -29,3 +28,13 @@ println(List(1, 2, 3, 4, 5).find(_ <= 0))
 println(List(1, 2, 3, -4, 5).takeWhile(_ > 0))
 println(words.dropWhile(_.startsWith("t")))
 println(List(1, 2, 3, -4, 5).span(_ > 0))
+
+def hasZeroRow(m: List[List[Int]]): Boolean =
+  m exists(row => row forall(_ == 0))
+println(hasZeroRow(List(List(1,2,3), List(0,0,0), List(4,5,6))))
+
+def sum(xs: List[Int]): Int = (0 /: xs) (_ + _)
+println(sum(List(1,2,3,4,5)))
+
+def product(xs: List[Int]): Int = (1 /: xs) (_ * _)
+println(product(List(1,2,3,4,5)))
