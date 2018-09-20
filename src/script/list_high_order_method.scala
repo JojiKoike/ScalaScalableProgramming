@@ -46,3 +46,8 @@ println(flattenLeft(List(List(1,2,3), List(4,5,6), List(7,8,9))))
 
 def flattenRight[T](xss: List[List[T]]): List[T] = (xss :\ List[T]()) (_ ::: _)
 println(flattenRight(List(List(1,2,3), List(4,5,6), List(7,8,9))))
+
+def reverseLeft[T](xs: List[T]): List[T] = {
+  (List[T]() /: xs) { (ys, y) => y :: ys }
+}
+println(reverseLeft(List(1,2,3)))
