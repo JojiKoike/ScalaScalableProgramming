@@ -51,3 +51,12 @@ def reverseLeft[T](xs: List[T]): List[T] = {
   (List[T]() /: xs) { (ys, y) => y :: ys }
 }
 println(reverseLeft(List(1,2,3)))
+
+// Ascending Order
+println(List(1,-3,4,2,6).sortWith(_ < _))
+// Descending Order
+println(List(1,-3,4,2,6).sortWith(_ > _))
+// Sort by Word Length in Ascending Order
+println(words.sortWith(_.length < _.length))
+// Sort by Word Length in Descending Order
+println(words.sortWith(_.length > _.length))
