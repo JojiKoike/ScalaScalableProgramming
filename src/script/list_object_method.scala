@@ -18,3 +18,8 @@ println(List.tabulate(5,5)(_ * _))
 // concat
 println(List.concat(List('a', 'b') , List('c')))
 println(List.concat(List(), List('b'), List('c')))
+
+// Handling Multiple Lists
+println((List(10, 20), List(3,4,5)).zipped.map(_ * _))
+println((List("abc", "ef"), List(3, 2)).zipped.forall(_.length == _))
+println((List("aaa", "bb"), List(3, 2)).zipped.exists(_.length != _))
