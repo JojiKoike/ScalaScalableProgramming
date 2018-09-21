@@ -26,3 +26,15 @@ println
 3 +=: buf
 buf.toList.foreach(print)
 println
+
+// Array Buffer
+val abuf = new scala.collection.mutable.ArrayBuffer[Int]()
+abuf += 12
+abuf += 15
+abuf.toArray.foreach(print)
+println
+20 +=: abuf
+abuf.toArray.foreach(print)
+println
+println(abuf.length)
+println(abuf(1))
