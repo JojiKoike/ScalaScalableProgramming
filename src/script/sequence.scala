@@ -38,3 +38,7 @@ abuf.toArray.foreach(print)
 println
 println(abuf.length)
 println(abuf(1))
+
+// StringOps
+def hasUpperCase(s: String): Boolean = s.exists(_.isUpper)
+println(hasUpperCase("Robert Frost"))
