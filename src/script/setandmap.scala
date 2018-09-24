@@ -14,3 +14,11 @@ val words = scala.collection.mutable.Set.empty[String]
 for (word <- wordsArray)
   words += word.toLowerCase
 println(words.mkString(","))
+
+// Map
+val map = scala.collection.mutable.Map.empty[String, Int]
+map("hello") = 1
+map("there") = 2
+map.foreach(println)
+map.keys.foreach(println)
+map.values.foreach(println)
