@@ -1,3 +1,5 @@
+import scala.collection.mutable
+
 // Immutable Set
 val immutableSet = Set(1,2,3)
 println(immutableSet)
@@ -41,3 +43,17 @@ map.foreach(println)
 for (key <- map.keys.toList) {
   println(map(key))
 }
+
+// CountWords
+def countWords(text: String): mutable.Map[String, Int] = {
+  val counts = scala.collection.mutable.Map.empty[String, Int]
+  for (rawWord <- text.split("[ ,!.]+")) {
+    val word = rawWord.toLowerCase
+    val oldCount =
+      if (counts.contains(word)) counts(word)
+      else 0
+    counts += (word -> (oldCount + 1))
+  }
+  counts
+}
+countWords("See Spot run! Run, Spot. Run!").foreach(println)
