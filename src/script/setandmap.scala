@@ -20,5 +20,6 @@ val map = scala.collection.mutable.Map.empty[String, Int]
 map("hello") = 1
 map("there") = 2
 map.foreach(println)
-map.keys.foreach(println)
-map.values.foreach(println)
+for (key <- map.keys.toList) {
+  println(map(key))
+}
