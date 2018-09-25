@@ -86,3 +86,16 @@ treeSet.foreach(println)
 // Convert to Array or List
 treeSet.toList.foreach(println)
 treeSet.toArray.foreach(println)
+
+// Mutable or Immutable
+var people = Set("Nancy", "Jane")
+people += "Bob"
+people.foreach(println)
+people -= "Jane"
+people.foreach(println)
+people ++= List("Tom", "Harry")
+people.foreach(println)
+
+var capital = Map("US" -> "Washington", "France" -> "Paris")
+capital += ("Japan" -> "Tokyo")
+println(capital("France"))
