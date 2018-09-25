@@ -120,3 +120,8 @@ val immutaSet = Set.empty ++ mutaSet
 println(immutaSet)
 println(immutaSet ++ List("gold", "silver"))
 println(immutaSet)
+
+val muta = mutable.Map("i" -> 1, "ii" -> 2)
+println(muta)
+val immu = Map.empty ++ muta
+println(immu)
