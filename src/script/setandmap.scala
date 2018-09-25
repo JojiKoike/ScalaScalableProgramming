@@ -112,3 +112,11 @@ colorTreeSet.foreach(println)
 // Convert Array or List
 treeSet.toList.foreach(println)
 treeSet.toArray.foreach(println)
+
+// Exchange between Mutable and Immutable Collection
+val mutaSet = mutable.Set.empty ++= treeSet
+println(mutaSet)
+val immutaSet = Set.empty ++ mutaSet
+println(immutaSet)
+println(immutaSet ++ List("gold", "silver"))
+println(immutaSet)
