@@ -1,3 +1,4 @@
+import scala.collection.immutable.{TreeMap, TreeSet}
 import scala.collection.mutable
 
 // Immutable Set
@@ -43,6 +44,11 @@ map.foreach(println)
 for (key <- map.keys.toList) {
   println(map(key))
 }
+val numbers = Map("i" -> 1, "ii" -> 2)
+numbers.foreach(println)
+(numbers + ("vi" -> 6)).foreach(println)
+numbers.foreach(println)
+
 
 // CountWords
 def countWords(text: String): mutable.Map[String, Int] = {
@@ -57,3 +63,26 @@ def countWords(text: String): mutable.Map[String, Int] = {
   counts
 }
 countWords("See Spot run! Run, Spot. Run!").foreach(println)
+
+// Sorted Set
+val ts = TreeSet(9, 3, 1, 8, 0, 2, 7, 4, 6, 5)
+ts.foreach(print)
+println
+val cs = TreeSet('f', 'u', 'n')
+cs.foreach(print)
+println
+
+// Sorted Map
+var tm = TreeMap(3 -> 'x', 1 -> 'x', 4 -> 'x')
+tm.foreach(println)
+tm += (2 -> 'x')
+tm.foreach(println)
+
+// Initialize TreeSet using List
+val colors = List("blue", "yellow", "red", "green")
+val treeSet = TreeSet[String]() ++ colors
+treeSet.foreach(println)
+
+// Convert to Array or List
+treeSet.toList.foreach(println)
+treeSet.toArray.foreach(println)
