@@ -99,3 +99,16 @@ people.foreach(println)
 var capital = Map("US" -> "Washington", "France" -> "Paris")
 capital += ("Japan" -> "Tokyo")
 println(capital("France"))
+
+// Collection Initialize
+val stuff = mutable.Set[Any](42)
+stuff += "aaaaa"
+stuff.foreach(println)
+
+val colorList = List("blue", "yellow", "red", "green")
+val colorTreeSet = TreeSet[String]() ++ colorList
+colorTreeSet.foreach(println)
+
+// Convert Array or List
+treeSet.toList.foreach(println)
+treeSet.toArray.foreach(println)
