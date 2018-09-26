@@ -141,3 +141,8 @@ val longest = longestWord("The quick brown fox".split(" "))
 println(longest)
 println(longest._1)
 println(longest._2)
+val (word, idx) = longest
+println(word)
+println(idx)
+
+
