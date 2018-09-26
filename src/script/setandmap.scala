@@ -125,3 +125,19 @@ val muta = mutable.Map("i" -> 1, "ii" -> 2)
 println(muta)
 val immu = Map.empty ++ muta
 println(immu)
+
+// Tuple
+def longestWord(words: Array[String]): (String, Int) = {
+  var word = words(0)
+  var idx = 0
+  for (i <- 1 until words.length)
+    if (words(i).length > word.length) {
+      word = words(i)
+      idx = i
+    }
+  (word, idx)
+}
+val longest = longestWord("The quick brown fox".split(" "))
+println(longest)
+println(longest._1)
+println(longest._2)
