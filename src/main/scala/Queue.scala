@@ -1,7 +1,7 @@
-trait Queue[T] {
+trait Queue[+T] {
   def head: T
   def tail: Queue[T]
-  def enqueue(x: T): Queue[T]
+  def enqueue[U >: T](x:  U): Queue[U]
 }
 
 object Queue {
@@ -21,7 +21,7 @@ object Queue {
       val q = mirror
       new QueueImpl(q.trailing.tail, q.trailing)
     }
-    def enqueue(x: T) =
+    def enqueue[U >: T](x: U) =
       new QueueImpl(leading, x :: trailing)
   }
 }
