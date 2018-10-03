@@ -19,4 +19,10 @@ object C230 extends App {
 
   // for expression
   println(for (p <- persons; if !p.isMale; c <- p.children) yield (p.name, c.name))
+  println(for (p <- persons; n = p.name; if n startsWith "La") yield n)
+  println(for {
+    p <- persons          // Generator
+    n = p.name            // Definition
+    if n startsWith "La"  // Filter
+  } yield n)
 }
