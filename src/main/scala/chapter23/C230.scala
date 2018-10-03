@@ -25,4 +25,7 @@ object C230 extends App {
     n = p.name            // Definition
     if n startsWith "La"  // Filter
   } yield n)
+
+  // Multiple for expressions
+  println(for (x <- List(1,2); y <- List(3,4)) yield (x, y))
 }
