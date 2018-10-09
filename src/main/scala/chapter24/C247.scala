@@ -26,6 +26,10 @@ object C247 extends App {
   println(immutableMap.values.mkString(","))
   println(immutableMap.valuesIterator.mkString(","))
 
+  // Transform
+  println(immutableMap filterKeys(_.startsWith("J")))
+  println(immutableMap mapValues(_.toUpperCase))
+
   // Apply for Cache Implementation (Using Mutable Map)
   def f(x: String) = {
     println("taking my time.")
@@ -39,5 +43,9 @@ object C247 extends App {
   println(cache("abc"))
   cachedF("abc")
   println(cache("abc"))
+
+  // Transform
+  println(cache transform((_, value) => value.toUpperCase))
+  println(cache transform((key, _) => key.toLowerCase()))
 
 }
