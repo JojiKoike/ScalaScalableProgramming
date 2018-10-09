@@ -5,6 +5,11 @@ object C245 extends App {
   val seqSample = Seq(1, 2, 3, 4, 3, 2, 3, 4, 5)
   println(seqSample.mkString(","))
 
+  // Refer by index, Calculate Length
+  println(seqSample(1))
+  println(seqSample length)
+  println(seqSample.indices.mkString(","))
+
   // Sequence search
   println(seqSample indexOf 3)
   println(seqSample lastIndexOf 3)
@@ -31,6 +36,5 @@ object C245 extends App {
   println(seqSample startsWith Seq(3, 4))
   println(seqSample contains 3)
   println(seqSample containsSlice Seq(3, 4, 5))
-
 
 }
