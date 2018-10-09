@@ -1,8 +1,11 @@
 package chapter24
 
+import scala.collection.mutable
+
 object C246 extends App {
 
-  // Set
+  // Immutable Set
+  // Test
   val fruit = Set("apple", "orange", "peach", "banana")
   println(fruit("peach"))
   println(fruit contains "peach")
@@ -26,5 +29,39 @@ object C246 extends App {
   println((fruit -- Seq("apple", "peach")).mkString(","))
   println(fruit.empty.mkString(","))
 
+  // Binomial Calculation
+  println((fruit & Set("apple", "peach", "mango", "pine")).mkString(","))
+  println((fruit intersect  Set("apple", "peach", "mango", "pine")).mkString(","))
+  println((fruit | Set("apple", "peach", "mango", "pine")).mkString(","))
+  println((fruit union Set("apple", "peach", "mango", "pine")).mkString(","))
+  println((fruit &~ Set("apple", "peach", "mango", "pine")).mkString(","))
+  println((fruit diff Set("apple", "peach", "mango", "pine")).mkString(","))
+
+  // Mutable Set
+  val numberSet = mutable.Set(1, 2, 3)
+
+  // Append
+  numberSet += 4
+  numberSet += 1
+  println(numberSet.mkString(","))
+  numberSet += (4, 5, 6)
+  println(numberSet.mkString(","))
+  numberSet ++= Set(7, 8, 9)
+  println(numberSet.mkString(","))
+  println(numberSet add 10)
+  println(numberSet.mkString(","))
+  println(numberSet add 10)
+  println(numberSet.mkString(","))
+
+  // Remove
+  numberSet -= 4
+  println(numberSet.mkString(","))
+  numberSet -= (4, 5, 6)
+  println(numberSet.mkString(","))
+  numberSet --= Set(7, 8, 9)
+  println(numberSet.mkString(","))
+  println(numberSet remove 10)
+  println(numberSet.mkString(","))
+  println(numberSet remove 10)
 
 }
