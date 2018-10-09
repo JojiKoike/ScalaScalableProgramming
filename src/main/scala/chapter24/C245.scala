@@ -1,5 +1,7 @@
 package chapter24
 
+import scala.collection.mutable
+
 object C245 extends App {
   // Sequence
   val seqSample = Seq(1, 2, 3, 4, 3, 2, 3, 4, 5)
@@ -44,5 +46,45 @@ object C245 extends App {
   println((seqSample1 diff seqSample).mkString(","))
   println((seqSample union seqSample1).mkString(","))
   println(seqSample.distinct.mkString(","))
+
+  // Buffer
+  val bufSample: mutable.Buffer[Int] = mutable.Buffer()
+  println(bufSample.mkString(","))
+
+  // Append
+  bufSample += 1
+  println(bufSample.mkString(","))
+  bufSample += (2, 3, 4)
+  println(bufSample.mkString(","))
+  bufSample ++= Seq(9, 10, 11, 12)
+  println(bufSample.mkString(","))
+  -1 +=: bufSample
+  println(bufSample.mkString(","))
+  Seq(-5, -4, -3, -2) ++=: bufSample
+  println(bufSample.mkString(","))
+  bufSample.insert(bufSample.indexOf(1), 0)
+  println(bufSample.mkString(","))
+  bufSample.insertAll(bufSample.indexOf(9), Seq(5, 6, 7, 8))
+  println(bufSample.mkString(","))
+
+  // Remove
+  bufSample -= -5
+  println(bufSample.mkString(","))
+  bufSample remove bufSample.indexOf(0)
+  println(bufSample.mkString(","))
+  bufSample remove(bufSample.indexOf(10), 3)
+  println(bufSample.mkString(","))
+  bufSample trimStart 4
+  println(bufSample.mkString(","))
+  bufSample trimEnd 4
+  println(bufSample.mkString(","))
+  bufSample.clear()
+  println(bufSample.mkString(","))
+
+  // Clone
+  bufSample ++= Seq(1, 2, 3, 4, 5, 6)
+  val bufSampleClone = bufSample.clone()
+  println(bufSampleClone.mkString(","))
+  println(bufSample.mkString(","))
 
 }
