@@ -37,4 +37,12 @@ object C245 extends App {
   println(seqSample contains 3)
   println(seqSample containsSlice Seq(3, 4, 5))
 
+  // Set Calculation
+  val seqSample1 = Seq(1, 2, 3, 4, 5)
+  println((seqSample intersect seqSample1).mkString(","))
+  println((seqSample diff seqSample1).mkString(","))
+  println((seqSample1 diff seqSample).mkString(","))
+  println((seqSample union seqSample1).mkString(","))
+  println(seqSample.distinct.mkString(","))
+
 }
