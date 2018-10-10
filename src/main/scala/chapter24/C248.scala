@@ -1,5 +1,7 @@
 package chapter24
 
+import scala.collection.immutable.{ListMap, Queue, Stack}
+
 object C248 extends App {
 
   // Stream (List with Lazy Evaluation)
@@ -21,6 +23,32 @@ object C248 extends App {
   println(vec4 updated(2, 4) mkString "," )
   println(vec4.mkString(","))
 
+  // Immutable Stack
+  val stack = Stack.empty
+  val hasOne = stack.push(1)
+  println(stack)
+  println(hasOne)
+  println(hasOne.top)
+  println(hasOne.pop)
 
+  // Immutable Queue
+  val empQueue = Queue[Int]()
+  println(empQueue)
+  val has1Queue = empQueue.enqueue(1)
+  println(has1Queue)
+  val has123Queue = has1Queue.enqueue(List(2, 3))
+  println(has123Queue)
+  val (element, has23) = has123Queue.dequeue
+  println(element)
+  println(has23)
+
+  // Range
+  println(1 to 3)
+  println(5 to 14 by 3)
+  println(1 until 3)
+
+  // ListMap
+  val lMap = ListMap(1 -> "January", 2 -> "February", 3 -> "March", 4 -> "April")
+  println(lMap(2))
 
 }
