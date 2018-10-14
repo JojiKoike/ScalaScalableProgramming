@@ -1,6 +1,6 @@
 package chapter26
 
-object EMail {
+object EMail extends ((String, String) => String){
   // Injection Method
   def apply(user: String, domain: String): String = user + "@" + domain
 
