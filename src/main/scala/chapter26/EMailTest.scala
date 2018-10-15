@@ -13,4 +13,10 @@ object EMailTest extends App {
   }
 
   println(isTomInDotCom("tom@sum.com"))
+
+  val s = "tom@support.epfl.ch"
+  val ExpandedEmail(name, topdom, subdoms @ _*) = s
+  println(name)
+  println(topdom)
+  println(subdoms)
 }
