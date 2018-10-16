@@ -97,4 +97,18 @@ object C322 extends App {
   Thread.sleep(100)
   println(alsoRecovered.value)
 
+  // transform
+  val first = success.transform(
+    res => res * -1,
+    ex => new Exception("see cause", ex)
+  )
+  Thread.sleep(100)
+  println(first.value)
+  val second = failure.transform(
+    res => res * -1,
+    ex => new Exception("see cause", ex)
+  )
+  Thread.sleep(100)
+  println(second.value)
+
 }
