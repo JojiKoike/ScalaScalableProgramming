@@ -1,16 +1,11 @@
 package com.jojikoike.recipe
 
-object SimpleDataBase {
-
+object SimpleDataBase extends Database {
   def allFoods = List(Apple, Orange, Cream, Sugar)
-  def foodNamed(name: String): Option[Food] =
-    allFoods.find(_.name == name)
   def allRecipes: List[Recipe] = List(FruitSalad)
-  def recipeNamed(name: String): Option[Recipe] =
-    allRecipes.find(_.name == name)
-}
-
-object SimpleBrowser {
-  def recipesUsing(food: Food) =
-    SimpleDataBase.allRecipes.filter(recipe => recipe.ingredients.contains(food))
+  private var categories = List(
+    FoodCategory("fruits", List(Apple, Orange)),
+    FoodCategory("misc", List(Cream, Sugar))
+  )
+  override def allCategories: List[FoodCategory] = categories
 }
