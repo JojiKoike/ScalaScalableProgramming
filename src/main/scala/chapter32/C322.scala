@@ -111,4 +111,22 @@ object C322 extends App {
   Thread.sleep(100)
   println(second.value)
 
+  // zip
+  val zippedSuccess = success zip recovered
+  Thread.sleep(100)
+  println(zippedSuccess.value)
+  val zippedFailure = success zip failure
+  Thread.sleep(100)
+  println(zippedFailure.value)
+
+  // onComplete (callback)
+  success onComplete{
+    case Success(res) => println(res)
+    case Failure(ex) => println(ex)
+  }
+  failure onComplete{
+    case Success(res) => println(res)
+    case Failure(ex) => println(ex)
+  }
+
 }
